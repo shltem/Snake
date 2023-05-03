@@ -117,9 +117,7 @@ public class ConsoleDisplay extends Display {
             for (int i = 0; i < Border.getInstance().getWidth(); i++) {
                 if (boardBuffer[i][j] != newBuffer[i][j]) {
                     boardBuffer[i][j] = newBuffer[i][j];
-                    // Move the cursor to the corresponding position on the console
-                    moveCursor(i,j); // move cursor to (i,j)
-                    // Output the new character
+                    moveCursor(i,j);
                     System.out.print(newBuffer[i][j]);
                     System.out.flush();
                 }
