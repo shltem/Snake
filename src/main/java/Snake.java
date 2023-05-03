@@ -35,7 +35,6 @@ public class Snake {
             default:
                 return;
         }
-
         snakeBody.add(0, newHead); // add new head at the beginning
         if(newHead.equals(Food.getInstance().getFoodPosition())){
             Food.getInstance().newFoodPosition();
