@@ -3,6 +3,7 @@ import java.awt.event.KeyListener;
 import javax.swing.JFrame;
 
 public class ArrowKeyReader implements KeyListener, Runnable {
+
     public void start() {
         JFrame frame = new JFrame();
         frame.addKeyListener(this);
@@ -35,14 +36,17 @@ public class ArrowKeyReader implements KeyListener, Runnable {
                 break;
         }
     }
+
     @Override
     public void run() {
         start();
     }
+
     @Override
     public void keyReleased(KeyEvent e) {
         // We don't need to handle this event
     }
+
     @Override
     public void keyTyped(KeyEvent e) {
         // We don't need to handle this event

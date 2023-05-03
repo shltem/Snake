@@ -2,14 +2,23 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class GameManager {
+
     private boolean gameOver = false;
+
     private final Snake snake;
+
     private final Display display;
+
     private final Runnable arrowKeyReader;
+
     private final int SLEEP_TIME = 300;
+
     private Thread listenerThread;
+
     private Scanner scanner;
+
     private final int BOARD_SIZE = 15;
+
     public GameManager() throws IOException {
         Border border = Border.getInstance();
         this.snake = Snake.getInstance();
@@ -18,7 +27,6 @@ public class GameManager {
         this.arrowKeyReader = new ArrowKeyReader();
         listenerThread = new Thread(arrowKeyReader);
     }
-
     public void play() throws InterruptedException {
         listenerThread.start();
         while (!gameOver) {
@@ -35,7 +43,6 @@ public class GameManager {
     private void getSnakeSize() {
         System.out.println("Please select snake length: ");
     }
-
 
     private void sleep() throws InterruptedException {
         if(Snake.getInstance().getDirection() == Direction.UP ||

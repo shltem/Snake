@@ -1,5 +1,7 @@
 public class Food {
+
     private Position foodPosition;
+
     private Food() {
         newFoodPosition();
     }
@@ -22,6 +24,7 @@ public class Food {
     private static class SingletonHolder {
         private static final Food INSTANCE = new Food();
     }
+
     public static Food getInstance() {
         return Food.SingletonHolder.INSTANCE;
     }
