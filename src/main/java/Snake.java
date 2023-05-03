@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+
 public class Snake {
 
     private final List<Position> snakeBody = new ArrayList<>();
