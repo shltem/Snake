@@ -5,14 +5,9 @@ public class GameManager {
     private boolean gameOver = false;
 
     private final Snake snake;
-
     private final Display display;
-
-    private final Runnable arrowKeyReader;
-
     private final int SLEEP_TIME = 300;
-
-    private Thread listenerThread;
+    private final Thread listenerThread;
     private final int BOARD_SIZE = 15;
 
     public GameManager() {
@@ -20,7 +15,7 @@ public class GameManager {
         this.snake = Snake.getInstance();
         border.initBorder(BOARD_SIZE * 2, BOARD_SIZE);
         this.display = new ConsoleDisplay();
-        this.arrowKeyReader = new ArrowKeyReader();
+        Runnable arrowKeyReader = new ArrowKeyReader();
         listenerThread = new Thread(arrowKeyReader);
     }
     public void play() throws InterruptedException {
