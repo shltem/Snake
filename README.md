@@ -14,4 +14,4 @@ Extract the downloaded ZIP file to a location on your computer.
 Navigate to the Snake-master/src/main/java directory in the extracted files.
 Open a terminal or command prompt in that directory and run the command javac *.java to compile all the Java files in that directory.
 Once the compilation is complete, run the game by running the command java Main in the same directory.
-This should start the game and allow you to play it. If there are any issues with compiling or running the game, make sure that you have Java installed on your computer</p>
+This should start the game and allow you to play it. If there are any issues with compiling or running the game, make sure that you have Java installed on your computer.</p>
