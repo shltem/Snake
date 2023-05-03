@@ -136,6 +136,7 @@ public class ConsoleDisplay extends Display {
     public void moveCursor(int i, int j) {
         System.out.print("\033[" + (j +1) + ";" + (i +1) + "H");
     }
+
     public void hideCursor() {
         System.out.print("\033[?25l");
     }
