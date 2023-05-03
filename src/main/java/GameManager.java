@@ -1,13 +1,16 @@
-import java.io.IOException;
 
 public class GameManager {
 
     private boolean gameOver = false;
 
     private final Snake snake;
+
     private final Display display;
+
     private final int SLEEP_TIME = 300;
+
     private final Thread listenerThread;
+
     private final int BOARD_SIZE = 15;
 
     public GameManager() {
