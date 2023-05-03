@@ -6,6 +6,3 @@
 There may be issues with the game's display on certain operating systems or console environments due to differences in terminal or command prompt capabilities. </p>
 
 <p>Future development plans for this Snake game project include adding features such as colored graphics, sound effects, and a score display to enhance the gaming experience. Additionally, I want to work towards a more advanced display of the game</p>
-<h2>How to run the Snake game</h2>
-<p>To run the Snake game, navigate to the out/SnakeAlign_jar folder of the project and execute the following command in your terminal:</p>
-<p>java -jar SnakeAlign.jar</p>
