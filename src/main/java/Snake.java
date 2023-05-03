@@ -3,17 +3,13 @@ import java.util.List;
 public class Snake {
     private final List<Position> snakeBody = new ArrayList<>();
     private Direction direction;
-
     private Snake() {
         direction = Direction.RIGHT;
         snakeBody.add(new Position(1,1)); // up left position to start the game
     }
-
-
     public void setDirection(Direction newDirection) {
         direction = newDirection;
     }
-
     public void move() {
         Position head = getHead();
         Position newHead;
@@ -44,11 +40,9 @@ public class Snake {
     private Position getHead() {
         return snakeBody.get(0);
     }
-
     public List<Position> getSnakePositions() {
         return snakeBody;
     }
-
     public boolean isCollision(){
         return isSelfCollision() || isBorderCollision();
     }
