@@ -15,7 +15,7 @@ public class GameManager {
     private Thread listenerThread;
     private final int BOARD_SIZE = 15;
 
-    public GameManager() throws IOException {
+    public GameManager() {
         Border border = Border.getInstance();
         this.snake = Snake.getInstance();
         border.initBorder(BOARD_SIZE * 2, BOARD_SIZE);
@@ -35,9 +35,6 @@ public class GameManager {
             }
             sleep();
         }
-    }
-    private void getSnakeSize() {
-        System.out.println("Please select snake length: ");
     }
 
     private void sleep() throws InterruptedException {
