@@ -1,5 +1,4 @@
 import java.io.IOException;
-import java.util.Scanner;
 
 public class GameManager {
 
@@ -14,9 +13,6 @@ public class GameManager {
     private final int SLEEP_TIME = 300;
 
     private Thread listenerThread;
-
-    private Scanner scanner;
-
     private final int BOARD_SIZE = 15;
 
     public GameManager() throws IOException {
