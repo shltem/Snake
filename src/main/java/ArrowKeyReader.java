@@ -2,7 +2,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.HashMap;
 import java.util.Map;
-import javax.swing.JFrame;
+import javax.swing.*;
 
 public class ArrowKeyReader implements KeyListener, Runnable {
 
@@ -13,9 +13,9 @@ public class ArrowKeyReader implements KeyListener, Runnable {
     }
 
     public void start() {
-        JFrame frame = new JFrame();
-        frame.addKeyListener(this);
-        frame.setVisible(true);
+        JPanel panel = new JPanel();
+        panel.addKeyListener(this);
+        panel.setVisible(true);
         try {
             while (true) {
                 Thread.sleep(2); // Pausing to prevent CPU use
