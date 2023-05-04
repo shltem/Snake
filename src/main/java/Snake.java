@@ -1,5 +1,8 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
 
 public class Snake {
 
@@ -7,10 +10,13 @@ public class Snake {
 
     private Direction direction;
 
+    Map<Direction, Function<Position, Position>> moveMap = new HashMap<>();
     private Snake() {
         direction = Direction.RIGHT;
         snakeBody.add(new Position(1,1)); // up left position to start the game
+        initMoveMap();
     }
+
 
     public void setDirection(Direction newDirection) {
         direction = newDirection;
@@ -19,23 +25,8 @@ public class Snake {
     public void move() {
         Position head = getHead();
         Position newHead;
-        switch (direction) {
-            case UP:
-                newHead = new Position(head.getX(), head.getY() - 1);
-                break;
-            case DOWN:
-                newHead = new Position(head.getX(), head.getY() + 1);
-                break;
-            case LEFT:
-                newHead = new Position(head.getX() - 1, head.getY());
-                break;
-            case RIGHT:
-                newHead = new Position(head.getX() + 1, head.getY());
-                break;
-            default:
-                return;
-        }
-        snakeBody.add(0, newHead); // add new head at the beginning
+        newHead = moveMap.get(direction).apply(head);
+        snakeBody.add(0, newHead);
         if(newHead.equals(Food.getInstance().getFoodPosition())){
             Food.getInstance().newFoodPosition();
         }else{
@@ -80,4 +71,28 @@ public class Snake {
     public Direction getDirection() {
         return direction;
     }
+
+    Function<Position, Position> getRightNewPosition = (currHead)->{
+        return new Position(currHead.getX() + 1, currHead.getY());
+    };
+
+    Function<Position, Position> getLeftNewPosition = (currHead)->{
+        return new Position(currHead.getX() - 1, currHead.getY());
+    };
+
+    Function<Position, Position> getUpNewPosition = (currHead)->{
+        return new Position(currHead.getX(), currHead.getY() - 1);
+    };
+
+    Function<Position, Position> getDounNewPosition = (currHead)->{
+        return new Position(currHead.getX(), currHead.getY() + 1);
+    };
+
+    private void initMoveMap() {
+        moveMap.put(Direction.UP, getUpNewPosition);
+        moveMap.put(Direction.DOWN, getDounNewPosition);
+        moveMap.put(Direction.RIGHT, getRightNewPosition);
+        moveMap.put(Direction.LEFT, getLeftNewPosition);
+    }
+
 }
