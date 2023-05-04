@@ -46,6 +46,7 @@ public class ArrowKeyReader implements KeyListener, Runnable {
         setDirectionMap.put(KeyEvent.VK_RIGHT, setDirectionRight);
         setDirectionMap.put(KeyEvent.VK_LEFT, setDirectionLeft);
     }
+
     @Override
     public void keyReleased(KeyEvent e) {
         // We don't need to handle this event
