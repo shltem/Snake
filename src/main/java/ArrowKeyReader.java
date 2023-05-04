@@ -1,8 +1,16 @@
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.HashMap;
+import java.util.Map;
 import javax.swing.JFrame;
 
 public class ArrowKeyReader implements KeyListener, Runnable {
+
+    Map<Integer, Runnable> setDirectionMap = new HashMap<>();
+
+    public ArrowKeyReader() {
+        initSetDirectionMap();
+    }
 
     public void start() {
         JFrame frame = new JFrame();
@@ -19,22 +27,7 @@ public class ArrowKeyReader implements KeyListener, Runnable {
 
     @Override
     public void keyPressed(KeyEvent e) {
-        switch (e.getKeyCode()) {
-            case KeyEvent.VK_UP:
-                Snake.getInstance().setDirection(Direction.UP);
-                break;
-            case KeyEvent.VK_DOWN:
-                Snake.getInstance().setDirection(Direction.DOWN);
-                break;
-            case KeyEvent.VK_RIGHT:
-                Snake.getInstance().setDirection(Direction.RIGHT);
-                break;
-            case KeyEvent.VK_LEFT:
-                Snake.getInstance().setDirection(Direction.LEFT);
-                break;
-            default:
-                break;
-        }
+        setDirectionMap.get(e.getKeyCode()).run();
     }
 
     @Override
@@ -42,6 +35,17 @@ public class ArrowKeyReader implements KeyListener, Runnable {
         start();
     }
 
+    private final Runnable setDirectionUp = ()-> Snake.getInstance().setDirection(Direction.UP);
+    private final Runnable setDirectionDown = ()-> Snake.getInstance().setDirection(Direction.DOWN);
+    private final Runnable setDirectionRight = ()-> Snake.getInstance().setDirection(Direction.RIGHT);
+    private final Runnable setDirectionLeft = ()-> Snake.getInstance().setDirection(Direction.LEFT);
+
+    private void initSetDirectionMap() {
+        setDirectionMap.put(KeyEvent.VK_UP, setDirectionUp);
+        setDirectionMap.put(KeyEvent.VK_DOWN, setDirectionDown);
+        setDirectionMap.put(KeyEvent.VK_RIGHT, setDirectionRight);
+        setDirectionMap.put(KeyEvent.VK_LEFT, setDirectionLeft);
+    }
     @Override
     public void keyReleased(KeyEvent e) {
         // We don't need to handle this event
@@ -51,5 +55,6 @@ public class ArrowKeyReader implements KeyListener, Runnable {
     public void keyTyped(KeyEvent e) {
         // We don't need to handle this event
     }
+
 }
 
