@@ -72,19 +72,19 @@ public class Snake {
         return direction;
     }
 
-    Function<Position, Position> getRightNewPosition = (currHead)->{
+    private final Function<Position, Position> getRightNewPosition = (currHead)->{
         return new Position(currHead.getX() + 1, currHead.getY());
     };
 
-    Function<Position, Position> getLeftNewPosition = (currHead)->{
+    private final Function<Position, Position> getLeftNewPosition = (currHead)->{
         return new Position(currHead.getX() - 1, currHead.getY());
     };
 
-    Function<Position, Position> getUpNewPosition = (currHead)->{
+    private final Function<Position, Position> getUpNewPosition = (currHead)->{
         return new Position(currHead.getX(), currHead.getY() - 1);
     };
 
-    Function<Position, Position> getDownNewPosition = (currHead)->{
+    private final Function<Position, Position> getDownNewPosition = (currHead)->{
         return new Position(currHead.getX(), currHead.getY() + 1);
     };
 
