@@ -84,13 +84,13 @@ public class Snake {
         return new Position(currHead.getX(), currHead.getY() - 1);
     };
 
-    Function<Position, Position> getDounNewPosition = (currHead)->{
+    Function<Position, Position> getDownNewPosition = (currHead)->{
         return new Position(currHead.getX(), currHead.getY() + 1);
     };
 
     private void initMoveMap() {
         newHeadPositionMap.put(Direction.UP, getUpNewPosition);
-        newHeadPositionMap.put(Direction.DOWN, getDounNewPosition);
+        newHeadPositionMap.put(Direction.DOWN, getDownNewPosition);
         newHeadPositionMap.put(Direction.RIGHT, getRightNewPosition);
         newHeadPositionMap.put(Direction.LEFT, getLeftNewPosition);
     }
