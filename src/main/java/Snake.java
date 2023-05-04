@@ -14,7 +14,7 @@ public class Snake {
     private Snake() {
         direction = Direction.RIGHT;
         snakeBody.add(new Position(1,1)); // up left position to start the game
-        initMoveMap();
+        initNewHeadPositionMap();
     }
 
 
@@ -88,7 +88,7 @@ public class Snake {
         return new Position(currHead.getX(), currHead.getY() + 1);
     };
 
-    private void initMoveMap() {
+    private void initNewHeadPositionMap() {
         newHeadPositionMap.put(Direction.UP, getUpNewPosition);
         newHeadPositionMap.put(Direction.DOWN, getDownNewPosition);
         newHeadPositionMap.put(Direction.RIGHT, getRightNewPosition);
