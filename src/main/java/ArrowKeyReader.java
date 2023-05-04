@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 
 public class ArrowKeyReader implements KeyListener, Runnable {
 
-    Map<Integer, Runnable> setDirectionMap = new HashMap<>();
+    private final Map<Integer, Runnable> setDirectionMap = new HashMap<>();
 
     public ArrowKeyReader() {
         initSetDirectionMap();
