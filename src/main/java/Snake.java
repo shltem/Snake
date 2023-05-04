@@ -10,7 +10,7 @@ public class Snake {
 
     private Direction direction;
 
-    Map<Direction, Function<Position, Position>> moveMap = new HashMap<>();
+    Map<Direction, Function<Position, Position>> newHeadPositionMap = new HashMap<>();
     private Snake() {
         direction = Direction.RIGHT;
         snakeBody.add(new Position(1,1)); // up left position to start the game
@@ -25,7 +25,7 @@ public class Snake {
     public void move() {
         Position head = getHead();
         Position newHead;
-        newHead = moveMap.get(direction).apply(head);
+        newHead = newHeadPositionMap.get(direction).apply(head);
         snakeBody.add(0, newHead);
         if(newHead.equals(Food.getInstance().getFoodPosition())){
             Food.getInstance().newFoodPosition();
@@ -89,10 +89,10 @@ public class Snake {
     };
 
     private void initMoveMap() {
-        moveMap.put(Direction.UP, getUpNewPosition);
-        moveMap.put(Direction.DOWN, getDounNewPosition);
-        moveMap.put(Direction.RIGHT, getRightNewPosition);
-        moveMap.put(Direction.LEFT, getLeftNewPosition);
+        newHeadPositionMap.put(Direction.UP, getUpNewPosition);
+        newHeadPositionMap.put(Direction.DOWN, getDounNewPosition);
+        newHeadPositionMap.put(Direction.RIGHT, getRightNewPosition);
+        newHeadPositionMap.put(Direction.LEFT, getLeftNewPosition);
     }
 
 }
