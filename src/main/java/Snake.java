@@ -8,11 +8,14 @@ public class Snake {
 
     private final List<Position> snakeBody = new ArrayList<>();
 
+    private final Border border;
+
     private Direction direction;
 
     Map<Direction, Function<Position, Position>> newHeadPositionMap = new HashMap<>();
     private Snake() {
         direction = Direction.RIGHT;
+        this.border = Border.getInstance();
         snakeBody.add(new Position(1,1)); // up left position to start the game
         initNewHeadPositionMap();
     }
@@ -56,8 +59,8 @@ public class Snake {
     }
 
     private boolean isBorderCollision() {
-        return getHead().getX() <= 0 || getHead().getX() >= Border.getInstance().getWidth() -1||
-                getHead().getY() <= 0 || getHead().getY() >= Border.getInstance().getHeight() -1;
+        return getHead().getX() <= 0 || getHead().getX() >= border.getWidth() -1||
+                getHead().getY() <= 0 || getHead().getY() >= border.getHeight() -1;
     }
 
     private static class SingletonHolder {

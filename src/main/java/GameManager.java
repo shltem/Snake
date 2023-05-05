@@ -2,7 +2,6 @@
 public class GameManager {
 
     private boolean gameOver = false;
-
     private final Snake snake;
 
     private final Display display;
@@ -36,8 +35,8 @@ public class GameManager {
     }
 
     private void sleep() throws InterruptedException {
-        if(Snake.getInstance().getDirection() == Direction.UP ||
-                Snake.getInstance().getDirection() == Direction.DOWN){
+        if(snake.getDirection() == Direction.UP ||
+                snake.getDirection() == Direction.DOWN){
             Thread.sleep(SLEEP_TIME);
         }else{
             Thread.sleep((long)(SLEEP_TIME * (0.5))); // for matching speed between directions.
