@@ -25,7 +25,7 @@ public class ArrowKeyReader implements KeyListener, Runnable {
     }
 
     @Override
-    public void keyPressed(KeyEvent e) {
+    public void keyPressed(KeyEvent e) { // This function is called by the frame object that listens to keyboard input.
         setDirectionMap.get(e.getKeyCode()).run();
     }
 

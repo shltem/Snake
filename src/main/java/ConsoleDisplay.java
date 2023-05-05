@@ -4,11 +4,11 @@ import java.util.List;
 public class ConsoleDisplay extends Display {
 
     char[][] boardBuffer;
-    private final Snake snake;
+    //private final Snake snake;
     char[][] newBuffer;
-    private final Border border;
+    //private final Border border;
 
-    private final Food food;
+    //private final Food food;
     private Position oldFoodPosition = new Position(1,1);
 
     private final List<Position> oldSnakePositions = new ArrayList<>();
