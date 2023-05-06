@@ -12,7 +12,7 @@
 <li>This should start the game and allow you to play it. </li>
 </ol>
 <p>There may be issues with the game's display on certain operating systems or console environments due to differences in terminal or command prompt capabilities. </p>
-<p>To control the movement of the snake, use the arrow keys on your keyboard.Be careful not to run into the walls or the snake's own body, or the game will be over!</p>
+<p>To control the movement of the snake, use the arrow keys on your keyboard. Be careful not to run into the walls or the snake's own body, or the game will be over!</p>
 <p>
 
 <p>Future development plans for this Snake game project include adding features such as colored graphics, sound effects, and a score display to enhance the gaming experience. Additionally, I want to work towards a more advanced display of the game</p>
