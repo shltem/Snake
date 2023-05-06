@@ -4,11 +4,11 @@
 <h2>Compiling and Running the Snake Game</h2>
 <p>To compile and run this project, please follow these steps:
 <ol>
-<li>Click on the green "Code" button on this page and select "Download ZIP" to download the project to your computer.</li>
-<li>Extract the downloaded ZIP file to a location on your computer.</li>
-<li>Navigate to the 'Snake-master/src/main/java' directory in the extracted files.</li>
-<li>Open a terminal or command prompt in that directory and run the command 'javac *.java' to compile all the Java files in that directory.</li>
-<li>Once the compilation is complete, run the game by running the command 'java Main' in the same directory.</li>
+<li>Click on the green "Code" button on this page and select "Download ZIP" to download the project to your computer. Alternatively, you can clone the repository by executing the following command in your terminal or Git command prompt: <code>git clone https://github.com/shltem/Snake.git</code>. This will create a local copy of the repository on your computer.</li>
+<li>If you chose to download the ZIP file, extract it to a location on your computer.</li>
+<li>If you cloned the repository, navigate to the 'Snake-master/src/main/java' directory in the extracted files or cloned repository.</li>
+<li>Open a terminal or command prompt in that directory and run the command <code>javac *.java</code> to compile all the Java files in that directory.</li>
+<li>Once the compilation is complete, run the game by executing the command <code>java Main</code> in the same directory.</li>
 <li>This should start the game and allow you to play it. If there are any issues with compiling or running the game, make sure that you have Java installed on your computer.</li>
 </ol>
 <p>To control the movement of the snake, use the arrow keys on your keyboard.Be careful not to run into the walls or the snake's own body, or the game will be over!</p>
