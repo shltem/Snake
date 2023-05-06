@@ -15,6 +15,6 @@
 <p>To control the movement of the snake, use the arrow keys on your keyboard. Be careful not to run into the walls or the snake's own body, or the game will be over!</p>
 <p>
 
-<p>Future plans for the Snake game project include adding different levels, improving graphics, sound effects, and the score display. These enhancements will enhance the overall gaming experience.</p>
+<p>Future plans for the Snake game project include adding different levels, improving graphics, sound effects, and a score display. These enhancements will enhance the overall gaming experience.</p>
 <h2>UML Design Overview</h2>
 <img src="Snake.jpg" alt="uml design">
