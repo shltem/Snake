@@ -7,19 +7,16 @@ import java.util.function.Function;
 public class Snake {
 
     private final List<Position> snakeBody = new ArrayList<>();
-
     private final Border border;
-
     private Direction direction;
-
     Map<Direction, Function<Position, Position>> newHeadPositionMap = new HashMap<>();
+
     private Snake() {
         direction = Direction.RIGHT;
         this.border = Border.getInstance();
         snakeBody.add(new Position(1,1)); // up left position to start the game
         initNewHeadPositionMap();
     }
-
 
     public void setDirection(Direction newDirection) {
         direction = newDirection;
@@ -97,5 +94,4 @@ public class Snake {
         newHeadPositionMap.put(Direction.RIGHT, getRightNewPosition);
         newHeadPositionMap.put(Direction.LEFT, getLeftNewPosition);
     }
-
 }

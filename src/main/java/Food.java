@@ -8,8 +8,6 @@ public class Food {
         newFoodPosition();
     }
 
-
-
     public void newFoodPosition() {
         Position position = new Position((int) (Math.random() * border.getWidth()), (int) (Math.random() * border.getHeight()));
         while (Snake.getInstance().getSnakePositions().contains(position) || position.getX() < 1 ||
