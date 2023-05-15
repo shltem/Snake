@@ -36,7 +36,7 @@ public class ConsoleDisplay extends Display {
     }
 
     @Override
-    void drewBoard() {
+    public void drewBoard() {
         eraseOldBoard();
         drewNewBoard();
         updateDisplay();
@@ -80,7 +80,7 @@ public class ConsoleDisplay extends Display {
         oldFoodPosition.setY(food.getFoodPosition().getY());
     }
 
-    void initBuffer(char[][] buffer){
+    private void initBuffer(char[][] buffer){
         for(int i = 0; i < border.getWidth(); ++i){
             for(int j = 0; j < border.getHeight(); ++j){
                 buffer[i][j] = ' ';
